@@ -9,7 +9,7 @@ int convert(unsigned char *dst,unsigned char *src,int len){
     }
     return 0;
 }
-//十六进制转十进制
+//鍗佸叚杩涘埗杞崄杩涘埗
 unsigned long HextoDec(const unsigned char *hex, int length)
 {
     int i;
@@ -21,7 +21,7 @@ unsigned long HextoDec(const unsigned char *hex, int length)
     }
     return rslt;
 }
-//十进制转十六进制
+//鍗佽繘鍒惰浆鍗佸叚杩涘埗
 int DectoHex(int dec, unsigned char *hex, int length)
 {
     int i;
@@ -32,7 +32,7 @@ int DectoHex(int dec, unsigned char *hex, int length)
     }
     return 0;
 }
-//求权
+//姹傛潈
 unsigned long power(int base, int times)
 {
     int i;
@@ -41,7 +41,7 @@ unsigned long power(int base, int times)
         rslt *= base;
     return rslt;
 }
-//BCD转十进制
+//BCD杞崄杩涘埗
 unsigned long  BCDtoDec(const unsigned char *bcd, int length)
 {
     int i, tmp;
@@ -53,7 +53,7 @@ unsigned long  BCDtoDec(const unsigned char *bcd, int length)
     }
     return dec;
 }
-//十进制转BCD
+//鍗佽繘鍒惰浆BCD
 int DectoBCD(int Dec, unsigned char *Bcd, int length)
 {
     int i;
@@ -68,12 +68,12 @@ int DectoBCD(int Dec, unsigned char *Bcd, int length)
 }
 int main()
 {
-    //BCD码转十进制
+    //BCD杞崄杩涘埗
     unsigned char BCD[1] = {0x53};
     int dec_bcd = BCDtoDec(BCD, 1);
     cout << "dec_bcd : " << dec_bcd << endl;
 
-    //十进制转BCD码
+    //鍗佽繘鍒惰浆BCD
     unsigned char tmp_bff[3] = "";
     DectoBCD(dec_bcd, tmp_bff, 3);
     for (int i = 0; i < 3; ++i)
@@ -83,13 +83,13 @@ int main()
     }
 
     cout << endl << endl;
-    //十六进制转十进制
+    //鍗佸叚杩涘埗杞崄杩涘埗
     //unsigned char Hex[3] = { 0x00, 0x53, 0x20 };
     unsigned char Hex[2] = {0x53,0x20};
     int dec_hex = HextoDec(Hex, 2);
     cout << "dec_hex: " << dec_hex << endl;
 
-    //十进制转十六进制
+    //鍗佽繘鍒惰浆鍗佸叚杩涘埗
     unsigned char hex_bff[3] = "";
     DectoHex(dec_hex, hex_bff, 3);
     for (int i = 0; i < 3; ++i)
